@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+
+  </head>
+  <body>
+    <h1>Trabajo Práctico 3</h1>
+    <script type="module" src="/main.js"></script>
+    <script>
+      function showName(id){
+        console.log(document.getElementById(id).textContent);
+      }
+    </script>
+    <script>
+      function checkDisabledTextField(textFieldId){
+        const textField= document.getElementById(textFieldId);
+        if (textField.hasAttribute("disabled")){
+          textField.removeAttribute("disabled");
+        }
+      }
+    </script>
+    <script>
+      function checkEnabledTextField(textFieldId){
+        const textField= document.getElementById(textFieldId);
+        if (!textField.hasAttribute("disabled")){
+          textField.setAttribute("disabled", true);
+        }
+      }
+    </script>
+    <div id="parrafos"> 
+      <p>Este es el primer párrafo</p>
+      <p>Este es el segundo párrafo</p>
+      <p>Este es el tercer párrafo</p>
+    </div>
+    <button id="button" type="button">Cambiar color de la fuente</button>
+
+    <h2>Ejercicio 2: Formulario con alerta</h2>
+    <form>
+      <label >Ingrese su texto</label>
+      <input type="text" id="textoIngresado"/>
+      <button id="button2" type="button">Mostrar alerta</button>
+    </form>
+    <ul>
+      <h2>Ejercicio 1: Lista con elementos:</h2>
+      <li id="elemento1" onclick="showName(id)">Elemento 1</li>
+      <li id="elemento2" onclick="showName(id)">Elemento 2</li>
+      <li id="elemento3" onclick="showName(id)">Elemento 3</li>
+      <li id="elemento4" onclick="showName(id)">Elemento 4</li>
+    </ul>
+
+    <form>
+      <h2>Ejercicio 2: Campo de texto y botones</h2>
+      <label>Ingrese su texto</label>
+      <input type="text" id="textoIngresado2">
+      <button id="button3" onclick="checkDisabledTextField('textoIngresado2')" type="button">Habilitar campo de texto</button>
+      <button id="button4" onclick="checkEnabledTextField('textoIngresado2')" type="button">Deshabilitar campo de texto</button>
+    </form>
+
+    <form>
+      <h2>Ejercicio 1: localStorage</h2>
+      <label>Correo electrónico:</label>
+      <input type="email" id="inputEmail"/>
+      <button type="button" id="saveEmailButton">Guardar correo</button>
+      <br>
+      <label>Correo guardado: </label>
+      <output id="outputEmail"></output>
+      <br>
+      <button type="button" id="eraseSavedEmail">Eliminar correo guardado</button>
+    </form>
+  </body>
+</html>
